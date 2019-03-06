@@ -6,14 +6,14 @@ import org.bukkit.Location;
 public class SimplePvP extends JavaPlugin {
     public boolean disable = false;
 
-    new Location(World pvp1, double 7, double 32, double 5);
+    Location playerLocation = new Location(World pvp1, double 7, double 32, double 5)
 
     @Override
     public void onEnable() {
         getLogger().info("SimplePvP has started.");
 
         while (disable = false) {
-            if (Location(player) < 1.5) {}
+            if (playerLocation.distance(player) < 1.5) {}
         }
 
     }
