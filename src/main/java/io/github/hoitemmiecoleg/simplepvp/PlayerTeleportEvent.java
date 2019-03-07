@@ -6,6 +6,8 @@ import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
 
+import static org.bukkit.Bukkit.getLogger;
+
 public class PlayerTeleportEvent extends PlayerMoveEvent {
 
     public World pvp = Bukkit.getWorld("pvp1");
@@ -13,6 +15,7 @@ public class PlayerTeleportEvent extends PlayerMoveEvent {
 
     public PlayerTeleportEvent(Player player, Location from, Location to) {
         super(player, from, to);
+        getLogger().info("Player has teleported from " + from.getWorld().getName() + "to " + pvp.getName());
         if (from.getWorld().getName().equals(pvp.getName())) {
             double spawn = Math.random() * 2 + 1;
             if (spawn == 1) {
