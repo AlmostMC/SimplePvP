@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63ba0dc4-7ee9-407d-8156-f922202341dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimplePvP.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/github/hoitemmiecoleg/simplepvp/SimplePvP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/hoitemmiecoleg/simplepvp/SimplePvP.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,9 +18,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/io/github/hoitemmiecoleg/simplepvp/SimplePvP.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#941#942#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,6 +100,9 @@
       </pane>
     </panes>
   </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551921526658" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -168,9 +170,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/io/github/hoitemmiecoleg/simplepvp/SimplePvP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#941#942#0" expanded="true" />
           </folding>
         </state>
       </provider>
