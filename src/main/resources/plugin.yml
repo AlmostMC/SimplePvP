@@ -1,3 +1,15 @@
 name: SimplePvP
 version: 1.0
 main: io.github.hoitemmiecoleg.simplepvp.SimplePvP
+api-version: 1.13
+
+load: POSTWORLD
+
+commands:
+  pvpspawn1:
+    aliases:
+      - ps1
+    permission: simplepvp.setspawns
+permissions:
+  simplepvp.setspawn:
+    default: op
