@@ -21,7 +21,7 @@ public class onTeleport implements Listener {
         Location from = event.getFrom();
         Location to = event.getTo();
         Bukkit.broadcastMessage("Welcome to the server!");
-        getLogger().info("Player has teleported from " + from.getWorld().getName() + "to " + pvp.getName());
+        Bukkit.broadcastMessage("Player has teleported from " + from.getWorld().getName() + "to " + pvp.getName());
         if (to.getWorld().getName().equals(pvp.getName())) {
             double spawn = Math.random() * 2 + 1;
             if (spawn == 1) {
