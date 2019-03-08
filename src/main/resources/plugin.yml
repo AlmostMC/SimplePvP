@@ -3,7 +3,7 @@ version: 1.0
 main: io.github.hoitemmiecoleg.simplepvp.main
 api-version: 1.13
 
-load: POSTWORLD
+load: STARTUP
 
 commands:
   pvpspawn1:

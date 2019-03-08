@@ -16,7 +16,7 @@ public class onTeleport implements Listener {
     Location spawn1 = new Location(pvp, 10, 7, 5);
 
     @EventHandler
-    public void onTeleport(PlayerTeleportEvent event) {
+    public void onTeleportEvent(PlayerTeleportEvent event) {
         Player player = event.getPlayer();
         Location from = event.getFrom();
         Location to = event.getTo();

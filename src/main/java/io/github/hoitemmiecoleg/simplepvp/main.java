@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class main extends JavaPlugin {
     @Override
     public void onEnable() {
-        getLogger().info("SimplePvP has started.");
+        getLogger().info("SimplePvP is starting!");
         getServer().getPluginManager().registerEvents(new onTeleport(), this);
     }
     @Override
