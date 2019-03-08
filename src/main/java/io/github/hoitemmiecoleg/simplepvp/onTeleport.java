@@ -8,8 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerTeleportEvent;
 
-import static org.bukkit.Bukkit.getLogger;
-
 public class onTeleport implements Listener {
 
     public World pvp = Bukkit.getWorld("pvp1");
@@ -21,13 +19,14 @@ public class onTeleport implements Listener {
         Location from = event.getFrom();
         Location to = event.getTo();
         Bukkit.broadcastMessage("Welcome to the server!");
-        Bukkit.broadcastMessage("Player has teleported from " + from.getWorld().getName() + "to " + to.getWorld().getName());
-        //if (to.getWorld().getName().equals(pvp.getName())) {
-            //double spawn = Math.random() * 2 + 1;
-            //if (spawn == 1) {
-                //player.teleport(spawn1);
-            //}
-        //}
+        Bukkit.broadcastMessage("Player has teleported from " + from.getWorld().getName() + " to " + to.getWorld().getName());
+        double spawnX = -737;
+        double spawnY = 56;
+        double spawnZ = -892;
+        Location location = new Location(pvp, -737, 56, -892);
+        if (to.getWorld().getName().equals(pvp.getName())) {
+            player.teleport(location);
+        }
     }
 }
 
