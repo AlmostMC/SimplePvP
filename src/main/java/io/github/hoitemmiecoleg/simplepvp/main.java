@@ -3,11 +3,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 
-public class SimplePvP extends JavaPlugin {
+public class main extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("SimplePvP has started.");
-
+        getServer().getPluginManager().registerEvents(new onTeleport(), this);
     }
     @Override
     public void onDisable() {
