@@ -7,6 +7,12 @@ public class main extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("SimplePvP is starting!");
+        getLogger().info("test test test");
+        getLogger().info("test test test");
+        getLogger().info("test test test");
+        getLogger().info("test test test");
+        getLogger().info("test test test");
+        getLogger().info("test test test");
         getServer().getPluginManager().registerEvents(new onTeleport(), this);
     }
     @Override
