@@ -9,7 +9,13 @@ commands:
   pvpspawn1:
     aliases:
       - ps1
-    permission: simplepvp.setspawns
+    permission: simplepvp.admin
+  pvp:
+    aliases:
+      - pvpworld
+    permission: simplepvp.pvp
 permissions:
-  simplepvp.setspawn:
+  simplepvp.admin:
     default: op
+  simplepvp.pvp:
+    default: true
