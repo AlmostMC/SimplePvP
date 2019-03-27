@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerTeleportEvent;
 
 public class onTeleport implements Listener {
 
-    public World pvp = Bukkit.getWorld("pvp1");
+    World pvp = Bukkit.getWorld("pvp1");
 
     @EventHandler
     public void onTeleportEvent(PlayerTeleportEvent event) {
