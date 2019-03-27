@@ -8,7 +8,6 @@ public class main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         getLogger().info("SimplePvP has been enabled");
-        getServer().getPluginManager().registerEvents(new onTeleport(), this);
 
         this.getCommand("pvp").setExecutor(new pvp());
     }
