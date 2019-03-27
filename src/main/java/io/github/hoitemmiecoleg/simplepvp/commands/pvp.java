@@ -9,9 +9,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class pvp implements CommandExecutor {
-    World pvp = Bukkit.getWorld("pvp1");
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
+            World pvp = Bukkit.getWorld("pvp1");
             Player player = (Player) sender;
             Location spawn1 = new Location(pvp, 10, 10, 10);
             player.teleport(spawn1);
