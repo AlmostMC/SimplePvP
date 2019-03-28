@@ -72,6 +72,7 @@ public class pvp implements CommandExecutor {
             player.setExp(0);
             player.setFoodLevel(20);
             player.setFireTicks(0);
+            player.setGameMode(GameMode.ADVENTURE);
 
             ItemStack sword = new ItemStack(Material.STONE_SWORD, 1);
             sword.getItemMeta().addEnchant(Enchantment.KNOCKBACK, 3, true);sword.getItemMeta().addEnchant(Enchantment.DAMAGE_ALL, 3, true);
