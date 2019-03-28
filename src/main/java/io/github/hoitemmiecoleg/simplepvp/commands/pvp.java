@@ -14,8 +14,6 @@ import org.bukkit.scoreboard.Scoreboard;
 import java.util.Random;
 
 public class pvp implements CommandExecutor {
-    Scoreboard pvpBoard = Bukkit.getScoreboardManager().getNewScoreboard();
-
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             World pvp = Bukkit.getWorld("pvp1");
@@ -105,6 +103,7 @@ public class pvp implements CommandExecutor {
             player.getInventory().setBoots(boots);
             player.updateInventory();
 
+            Scoreboard pvpBoard = Bukkit.getScoreboardManager().getNewScoreboard();
             player.setScoreboard(pvpBoard);
 
             Objective kills = pvpBoard.registerNewObjective("kills", "playerKillCount");

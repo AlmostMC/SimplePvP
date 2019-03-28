@@ -15,7 +15,7 @@ commands:
       - pvpworld
     permission: simplepvp.pvp
     description: This command takes you to the pvp world.
-    usage: You must be a player to use this command!
+    usage: /pvp [Player]
 permissions:
   simplepvp.admin:
     default: op
