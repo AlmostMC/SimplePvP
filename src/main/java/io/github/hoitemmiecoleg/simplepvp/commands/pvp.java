@@ -15,19 +15,19 @@ public class pvp implements CommandExecutor {
             World pvp = Bukkit.getWorld("pvp1");
             Player player = (Player) sender;
 
-            Location spawn0 = new Location(pvp, 10, 10, 10);
-            Location spawn1 = new Location(pvp, 10, 10, 10);
-            Location spawn2 = new Location(pvp, 10, 10, 10);
-            Location spawn3 = new Location(pvp, 10, 10, 10);
-            Location spawn4 = new Location(pvp, 10, 10, 10);
-            Location spawn5 = new Location(pvp, 10, 10, 10);
+            Location spawn0 = new Location(pvp, -669.5, 80, -896.5);
+            Location spawn1 = new Location(pvp, -686.3, 61.125, -934.7, 48, 18);
+            Location spawn2 = new Location(pvp, -710.3, 62, -842.3, 126, 11);
+            Location spawn3 = new Location(pvp, -605.7, 62, -915.925, -117, 25);
+            Location spawn4 = new Location(pvp, -568.5, 68.5, -879.5);
+            Location spawn5 = new Location(pvp, -728.5, 86, -935.5, -63, 18);
             Location spawn6 = new Location(pvp, 10, 10, 10);
             Location spawn7 = new Location(pvp, 10, 10, 10);
             Location spawn8 = new Location(pvp, 10, 10, 10);
             Location spawn9 = new Location(pvp, 10, 10, 10);
 
             Random rand = new Random();
-            int spawn = rand.nextInt(10);
+            int spawn = rand.nextInt(6);
             if (spawn == 0) {
                 player.teleport(spawn0);
             }
