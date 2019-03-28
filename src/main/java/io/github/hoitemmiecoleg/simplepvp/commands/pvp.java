@@ -7,10 +7,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.scoreboard.DisplaySlot;
+import org.bukkit.scoreboard.Objective;
+import org.bukkit.scoreboard.Scoreboard;
 
 import java.util.Random;
 
 public class pvp implements CommandExecutor {
+    Scoreboard pvpBoard = Bukkit.getScoreboardManager().getNewScoreboard();
+
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             World pvp = Bukkit.getWorld("pvp1");
@@ -68,13 +73,15 @@ public class pvp implements CommandExecutor {
             player.setFoodLevel(20);
             player.setFireTicks(0);
 
-            ItemStack sword = new ItemStack(Material.BOW, 1);
-            sword.getItemMeta().addEnchant(Enchantment.KNOCKBACK, 3, true);
+            ItemStack sword = new ItemStack(Material.STONE_SWORD, 1);
+            sword.getItemMeta().addEnchant(Enchantment.KNOCKBACK, 3, true);sword.getItemMeta().addEnchant(Enchantment.DAMAGE_ALL, 3, true);
             sword.getItemMeta().setUnbreakable(true);
 
             ItemStack bow = new ItemStack(Material.BOW, 1);
             bow.getItemMeta().addEnchant(Enchantment.ARROW_KNOCKBACK, 3, true);bow.getItemMeta().addEnchant(Enchantment.ARROW_INFINITE, 1, true);
             bow.getItemMeta().setUnbreakable(true);
+
+            ItemStack arrow = new ItemStack(Material.ARROW, 1);
 
             ItemStack chestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
             chestplate.getItemMeta().addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
@@ -91,9 +98,17 @@ public class pvp implements CommandExecutor {
             player.getInventory().clear();
             player.getInventory().setItem(1, sword);
             player.getInventory().setItem(2, bow);
+            player.getInventory().setItem(9, arrow);
             player.getInventory().setChestplate(chestplate);
             player.getInventory().setLeggings(leggings);
             player.getInventory().setBoots(boots);
+            player.updateInventory();
+
+            player.setScoreboard(pvpBoard);
+
+            Objective kills = pvpBoard.registerNewObjective("kills", "playerKillCount");
+            kills.setDisplaySlot(DisplaySlot.SIDEBAR);
+            kills.setDisplayName(ChatColor.RED + "Kills");
 
             return true;
         }
