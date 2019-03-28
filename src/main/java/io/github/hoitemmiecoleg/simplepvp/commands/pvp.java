@@ -1,13 +1,16 @@
 package io.github.hoitemmiecoleg.simplepvp.commands;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import java.util.Random;
+
+import static org.bukkit.Material.BOW;
+import static org.bukkit.Material.STONE_SWORD;
 
 public class pvp implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -58,6 +61,11 @@ public class pvp implements CommandExecutor {
             if (spawn == 9) {
                 player.teleport(spawn9);
             }
+            player.setHealth(20.0);
+            player.setLevel(0);
+            player.setExp(0);
+            player.setFoodLevel(20);
+            player.setFireTicks(0);
 
             return true;
         }

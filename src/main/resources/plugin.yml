@@ -20,4 +20,4 @@ permissions:
   simplepvp.admin:
     default: op
   simplepvp.pvp:
-    default: true
+    default: op
