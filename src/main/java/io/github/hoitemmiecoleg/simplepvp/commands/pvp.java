@@ -7,10 +7,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import java.util.Random;
 
-import static org.bukkit.Material.BOW;
-import static org.bukkit.Material.STONE_SWORD;
+import java.util.Random;
 
 public class pvp implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -61,11 +59,41 @@ public class pvp implements CommandExecutor {
             if (spawn == 9) {
                 player.teleport(spawn9);
             }
+
+
+            //Inventory and Player settings
             player.setHealth(20.0);
             player.setLevel(0);
             player.setExp(0);
             player.setFoodLevel(20);
             player.setFireTicks(0);
+
+            ItemStack sword = new ItemStack(Material.BOW, 1);
+            sword.getItemMeta().addEnchant(Enchantment.KNOCKBACK, 3, true);
+            sword.getItemMeta().setUnbreakable(true);
+
+            ItemStack bow = new ItemStack(Material.BOW, 1);
+            bow.getItemMeta().addEnchant(Enchantment.ARROW_KNOCKBACK, 3, true);bow.getItemMeta().addEnchant(Enchantment.ARROW_INFINITE, 1, true);
+            bow.getItemMeta().setUnbreakable(true);
+
+            ItemStack chestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
+            chestplate.getItemMeta().addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
+            chestplate.getItemMeta().setUnbreakable(true);
+
+            ItemStack leggings = new ItemStack(Material.LEATHER_LEGGINGS);
+            leggings.getItemMeta().addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
+            leggings.getItemMeta().setUnbreakable(true);
+
+            ItemStack boots = new ItemStack(Material.LEATHER_BOOTS);
+            boots.getItemMeta().addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
+            boots.getItemMeta().setUnbreakable(true);
+
+            player.getInventory().clear();
+            player.getInventory().setItem(1, sword);
+            player.getInventory().setItem(2, bow);
+            player.getInventory().setChestplate(chestplate);
+            player.getInventory().setLeggings(leggings);
+            player.getInventory().setBoots(boots);
 
             return true;
         }
