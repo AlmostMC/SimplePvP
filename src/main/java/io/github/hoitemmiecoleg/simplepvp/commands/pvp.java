@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
+import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
 
 import java.util.Random;
@@ -95,8 +96,8 @@ public class pvp implements CommandExecutor {
             boots.getItemMeta().setUnbreakable(true);
 
             player.getInventory().clear();
-            player.getInventory().setItem(1, sword);
-            player.getInventory().setItem(2, bow);
+            player.getInventory().setItem(0, sword);
+            player.getInventory().setItem(1, bow);
             player.getInventory().setItem(9, arrow);
             player.getInventory().setChestplate(chestplate);
             player.getInventory().setLeggings(leggings);
@@ -108,7 +109,10 @@ public class pvp implements CommandExecutor {
 
             Objective kills = pvpBoard.registerNewObjective("kills", "playerKillCount");
             kills.setDisplaySlot(DisplaySlot.SIDEBAR);
-            kills.setDisplayName(ChatColor.RED + "Kills");
+            kills.setDisplayName(ChatColor.GOLD.toString() + ChatColor.BOLD + "Goldstrike Network");
+
+            Score killTitle = kills.getScore(ChatColor.RED + "Kills");
+            killTitle.setScore(1000);
 
             return true;
         }
