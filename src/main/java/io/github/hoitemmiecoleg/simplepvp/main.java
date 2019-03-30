@@ -15,6 +15,9 @@ public class main extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
 
         this.getCommand("pvp").setExecutor(new pvp());
+
+        pvp call = new pvp();
+        call.run();
     }
 
     @Override

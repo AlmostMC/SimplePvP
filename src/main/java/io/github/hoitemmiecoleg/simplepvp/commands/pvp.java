@@ -1,5 +1,6 @@
 package io.github.hoitemmiecoleg.simplepvp.commands;
 
+import jdk.nashorn.internal.codegen.CompilerConstants;
 import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,8 +14,11 @@ import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class pvp implements CommandExecutor {
+public class pvp extends TimerTask implements CommandExecutor {
+    public Scoreboard pvpBoard = Bukkit.getScoreboardManager().getNewScoreboard();
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             World pvp = Bukkit.getWorld("pvp1");
@@ -104,20 +108,49 @@ public class pvp implements CommandExecutor {
             player.getInventory().setBoots(boots);
             player.updateInventory();
 
-            Scoreboard pvpBoard = Bukkit.getScoreboardManager().getNewScoreboard();
+
             player.setScoreboard(pvpBoard);
-
-            Objective kills = pvpBoard.registerNewObjective("kills", "playerKillCount");
-            kills.setDisplaySlot(DisplaySlot.SIDEBAR);
-            kills.setDisplayName(ChatColor.GOLD.toString() + ChatColor.BOLD + "Goldstrike Network");
-
-            Score killTitle = kills.getScore(ChatColor.RED + "Kills");
-            killTitle.setScore(1000);
 
             return true;
         }
         else {
             return false;
         }
+    }
+    public void ScoreboardChange() {
+        Objective kills = pvpBoard.registerNewObjective("kills", "playerKillCount");
+        kills.setDisplayName(ChatColor.YELLOW.toString() + ChatColor.BOLD + "- " + ChatColor.RESET.toString() + ChatColor.GOLD + "Goldstrike Network");
+
+        Score killTitle = kills.getScore(ChatColor.RED + "Kills");
+        killTitle.setScore(1000);
+
+        String boardPosition = pvpBoard.getObjective(DisplaySlot.SIDEBAR).getName();
+
+
+        Objective stats = pvpBoard.registerNewObjective("stats", "dummy");
+        stats.setDisplayName(ChatColor.YELLOW.toString() + ChatColor.BOLD + "- " + ChatColor.RESET.toString() + ChatColor.GOLD + "Goldstrike Network");
+
+        Score game = stats.getScore(ChatColor.GOLD.toString() + ChatColor.BOLD + "PVP");
+        killTitle.setScore(1);
+
+
+        if (boardPosition.equals("kills")) {
+            stats.setDisplaySlot(DisplaySlot.SIDEBAR);
+        }
+        else {
+            kills.setDisplaySlot(DisplaySlot.SIDEBAR);
+        }
+    }
+    public void run()
+    {
+        final pvp call = new pvp();
+
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                call.ScoreboardChange();
+            }
+        }, 4000);
     }
 }
