@@ -18,7 +18,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class pvp extends TimerTask implements CommandExecutor {
-    public Scoreboard pvpBoard = Bukkit.getScoreboardManager().getNewScoreboard();
+    private Scoreboard pvpBoard = Bukkit.getScoreboardManager().getNewScoreboard();
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             World pvp = Bukkit.getWorld("pvp1");
@@ -117,7 +117,7 @@ public class pvp extends TimerTask implements CommandExecutor {
             return false;
         }
     }
-    public void ScoreboardChange() {
+    private void ScoreboardChange() {
         Objective kills = pvpBoard.registerNewObjective("kills", "playerKillCount");
         kills.setDisplayName(ChatColor.YELLOW.toString() + ChatColor.BOLD + "- " + ChatColor.RESET.toString() + ChatColor.GOLD + "Goldstrike Network");
 
