@@ -13,9 +13,9 @@ commands:
   pvp:
     aliases:
       - pvpworld
-    permission: simplepvp.pvp
-    description: This command takes you to the pvp world.
-    usage: /pvp [Player]
+    permission: simplepvp.pvpCommand
+    description: This command takes you to the pvpCommand world.
+    usage: /pvpCommand [Player]
 permissions:
   simplepvp.admin:
     default: op

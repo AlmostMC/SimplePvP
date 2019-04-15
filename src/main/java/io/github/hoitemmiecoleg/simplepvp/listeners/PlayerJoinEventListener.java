@@ -1,13 +1,13 @@
-package io.github.hoitemmiecoleg.simplepvp.events;
+package io.github.hoitemmiecoleg.simplepvp.listeners;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public class PlayerJoin implements Listener {
+public class PlayerJoinEventListener implements Listener {
     @EventHandler
-    public void onJoin(PlayerJoinEvent event) {
+    public void onPlayerJoin(org.bukkit.event.player.PlayerJoinEvent event) {
         event.getPlayer().setScoreboard(Bukkit.getScoreboardManager().getMainScoreboard());
     }
 }
